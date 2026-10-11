@@ -1,6 +1,6 @@
 create database empresa_db;
 use empresa_db;
-create table cliente(
+create table clientes(
 id int auto_increment primary key,
 nombre varchar(100) not null,
 correo varchar(100) not null unique,
