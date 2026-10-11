@@ -1,0 +1,74 @@
+# ============================================
+# Archivos de Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============================================
+# Entornos virtuales
+# ============================================
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.virtualenv/
+
+# ============================================
+# Visual Studio Code
+# ============================================
+.vscode/
+*.code-workspace
+
+# ============================================
+# PyCharm / IntelliJ
+# ============================================
+.idea/
+*.iml
+
+# ============================================
+# Variables de entorno y secretos
+# ============================================
+.env
+.env.local
+*.env
+secrets.json
+config.py
+
+# ============================================
+# Archivos generados por tus scripts
+# ============================================
+reporte_ventas.xlsx
+*.log
+
+# ============================================
+# Sistema Operativo
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================
+# Jupyter Notebooks (por si acaso)
+# ============================================
+.ipynb_checkpoints/
