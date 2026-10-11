@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify
-import os
+from flask import Flask, request, jsonify, render_template, redirect, url_for
 from dotenv import load_dotenv
 from crud_clientes import ClienteDB  # Asegúrate de que tu clase se llame así
+
 
 load_dotenv()
 
@@ -17,8 +17,21 @@ db = ClienteDB(
 )
 
 @app.route('/')
+@app.route('/')
 def home():
-    return "API de Clientes funcionando. Ve a /clientes para ver la lista."
+    # Obtener la lista de clientes de la base de datos
+    clientes = db.listar_clientes() 
+    # Asegurarnos de que devuelva una lista de diccionarios. 
+    # Si tu método devuelve tuplas, habrá que adaptarlo. 
+    return render_template('index.html', clientes=clientes)
+
+@app.route('/clientes/web', methods=['POST'])
+def crear_cliente_web():
+    nombre = request.form['nombre']
+    correo = request.form['correo']
+    telefono = request.form['telefono']
+    db.crear_cliente(nombre, correo, telefono)
+    return redirect(url_for('home'))
 
 @app.route('/clientes', methods=['GET'])
 def listar_clientes():
